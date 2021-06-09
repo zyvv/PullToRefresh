@@ -27,10 +27,8 @@ open class PullToRefresh: NSObject {
     
     open var position: Position = .top
     
-    open var animationDuration: TimeInterval = 1
+    open var animationDuration: TimeInterval = 0.2
     open var hideDelay: TimeInterval = 0
-    open var springDamping: CGFloat = 0.4
-    open var initialSpringVelocity: CGFloat = 0.8
     #if swift(>=4.2)
     open var animationOptions: UIView.AnimationOptions = [.curveLinear]
     #else
@@ -123,8 +121,8 @@ open class PullToRefresh: NSObject {
         self.refreshView.autoresizingMask = [.flexibleWidth]
     }
     
-    public convenience init(height: CGFloat = 40, position: Position = .top) {
-        let refreshView = DefaultRefreshView()
+    public convenience init(height: CGFloat = 40, position: Position = .top, lineColor: UIColor = .gray) {
+        let refreshView = RefreshView(lineColor: lineColor)
         refreshView.translatesAutoresizingMaskIntoConstraints = false
         refreshView.autoresizingMask = [.flexibleWidth]
         refreshView.frame.size.height = height
@@ -322,20 +320,13 @@ private extension PullToRefresh {
     
     func animateFinishedState() {
         removeScrollViewObserving()
-        UIView.animate(
-            withDuration: animationDuration,
-            delay: hideDelay,
-            usingSpringWithDamping: springDamping,
-            initialSpringVelocity: initialSpringVelocity,
-            options: animationOptions,
-            animations: {
-                self.scrollView?.contentInset = self.scrollViewDefaultInsets
-            },
-            completion: { _ in
-                self.addScrollViewObserving()
-                self.state = .initial
-            }
-        )
+        
+        UIView.animate(withDuration: animationDuration, delay: hideDelay, options: animationOptions) {
+            self.scrollView?.contentInset = self.scrollViewDefaultInsets
+        } completion: { _ in
+            self.addScrollViewObserving()
+            self.state = .initial
+        }
     }
 }
 

@@ -250,7 +250,7 @@
 				TargetAttributes = {
 					4DDDB19C1B0F7ED700DE9D93 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = MFVF92WP4G;
+						DevelopmentTeam = VN2D9WHJ93;
 						LastSwiftMigration = 1110;
 					};
 					4DDDB1C61B0F7EE700DE9D93 = {
@@ -463,10 +463,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = MFVF92WP4G;
+				DEVELOPMENT_TEAM = VN2D9WHJ93;
 				INFOPLIST_FILE = PullToRefreshDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Yalantis.PullToRefreshDemo-322";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ff.pulltorefresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -476,10 +476,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = MFVF92WP4G;
+				DEVELOPMENT_TEAM = VN2D9WHJ93;
 				INFOPLIST_FILE = PullToRefreshDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Yalantis.PullToRefreshDemo-322";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ff.pulltorefresh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
